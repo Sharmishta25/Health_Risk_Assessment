@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="heading"><h1>Patient records</h1><a class="button" href="{{ url_for('patient_form') }}">Add patient</a></div>
+  <p role="status">{{ patients|length }} saved record{{ '' if patients|length == 1 else 's' }}.</p>
+  {% if prediction_error %}<p class="error" role="alert">{{ prediction_error }} No changes were saved.</p>{% endif %}
+  {% if patients %}
+  <div class="table-wrap"><table>
+    <caption>All records. Each ID is managed independently, including identical entries.</caption>
+    <thead><tr><th>ID</th><th>Full Name</th><th>Date of Birth</th><th>Email Address</th>
+      <th>Glucose (mg/dL)</th><th>Haemoglobin (g/dL)</th><th>Cholesterol (mg/dL)</th><th>Remarks (read-only)</th><th>Actions</th></tr></thead>
+    <tbody>{% for patient in patients %}<tr>
+      <td>{{ patient.id }}</td><td>{{ patient.full_name }}</td><td>{{ patient.date_of_birth|display_dob }}</td>
+      <td>{{ patient.email }}</td><td>{{ patient.glucose }}</td><td>{{ patient.haemoglobin }}</td><td>{{ patient.cholesterol }}</td>
+      <td class="remarks">{% if patient.review_status == 'complete' %}{{ patient.remarks }}
+        {% elif patient.review_status == 'failed' %}AI review failed. No result is available.
+        {% else %}AI review unavailable: integration is not configured.{% endif %}
+        {% if patient.review_status != 'complete' %}<form method="post" action="{{ url_for('retry_review', record_id=patient.id) }}"><button type="submit">Retry review</button></form>{% endif %}
+      </td>
+      <td><a href="{{ url_for('patient_form', record_id=patient.id) }}">Edit #{{ patient.id }}</a>
+        <a href="{{ url_for('delete', record_id=patient.id) }}">Delete #{{ patient.id }}</a></td>
+    </tr>{% endfor %}</tbody>
+  </table></div>
+  {% else %}<p>No patient records yet. Add a patient to begin.</p>{% endif %}
+{% endblock %}

@@ -1,0 +1,27 @@
+:root { font-family: system-ui, sans-serif; color: #173139; background: #f3f7f7; }
+body { margin: 0; }
+main { max-width: 90rem; margin: 2rem auto; padding: 2rem; background: white; border-radius: .75rem; }
+h1 { line-height: 1.2; }
+p { line-height: 1.6; }
+a { color: #146477; }
+header { font-weight: 700; margin-bottom: 1rem; }
+.notice { background: #edf5f6; padding: 1rem; border-left: 4px solid #146477; }
+.heading { display: flex; gap: 1rem; align-items: center; justify-content: space-between; }
+.table-wrap { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; text-align: left; }
+caption { text-align: left; margin-bottom: 1rem; }
+th, td { padding: .8rem; border-bottom: 1px solid #ccdada; vertical-align: top; }
+td { overflow-wrap: anywhere; }
+td a { display: block; margin-bottom: .6rem; }
+.remarks { min-width: 14rem; white-space: pre-wrap; }
+.patient-form { max-width: 36rem; }
+.field { display: grid; gap: .4rem; margin: 1.2rem 0; }
+label { font-weight: 600; }
+input { font: inherit; padding: .7rem; border: 1px solid #718c93; border-radius: .3rem; min-width: 0; }
+input[aria-invalid="true"] { border: 2px solid #a52929; }
+.error { color: #a52929; }
+button, .button { display: inline-block; font: inherit; background: #146477; color: white; border: 0; border-radius: .3rem; padding: .65rem .9rem; cursor: pointer; text-decoration: none; }
+td button { margin-top: .6rem; }
+.danger { background: #a52929; }
+:focus-visible { outline: 3px solid #d79517; outline-offset: 3px; }
+@media (max-width: 600px) { main { margin: 0; padding: 1rem; } .heading { align-items: start; flex-direction: column; } }

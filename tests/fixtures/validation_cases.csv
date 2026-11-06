@@ -1,0 +1,11 @@
+test_number,full_name,date_of_birth,email,glucose,haemoglobin,cholesterol
+1,Demo Alpha,27.02.1962,alpha@example.com,232,13.5,180
+2,Demo Beta,11.12.1992,beta@example,94,15,200
+3,Demo Gamma,13.11.1994,gamma@example.org,240,18.6,326
+4,Demo Delta,31.11.2002,Delta@example.com,88,11.5,165
+5,Demo Epsilon,08.12.2005,epsilon@example.net,198,8.9,192
+6,Demo Alpha,27.02.1962,alpha@example.com,232,13.5,180
+7,Demo Zeta,11.09.1999,zeta@example.com,85,7.6,163
+8,Demo Eta,18.10.2031,Eta.example.com,79,16.5,197
+9,Demo Theta,29.11.1992,Theta@example.org,101,15,310
+10,Demo Iota,27.04.1991,iota@example.net,155,12.5,265

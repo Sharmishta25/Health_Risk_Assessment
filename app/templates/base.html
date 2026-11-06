@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blood-test risk review</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <main>
+    <header><a href="{{ url_for('index') }}">Blood-test risk review</a></header>
+    <p class="notice">Demo only. AI remarks describe possible risks and are not a diagnosis.
+      The brief omits lab units: this demo assumes glucose and cholesterol in mg/dL,
+      and haemoglobin in g/dL. Fasting status is unspecified.</p>
+    {% block content %}{% endblock %}
+  </main>
+</body>
+</html>

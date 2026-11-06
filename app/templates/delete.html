@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Delete record #{{ patient.id }}?</h1>
+<p>Confirm deletion of {{ patient.full_name }} ({{ patient.email }}), born {{ patient.date_of_birth|display_dob }}.</p>
+<p>This removes only record #{{ patient.id }}. This action cannot be undone.</p>
+<form method="post">
+  <button type="submit" class="danger">Confirm deletion</button>
+  <a href="{{ url_for('index') }}">Cancel</a>
+</form>
+{% endblock %}
